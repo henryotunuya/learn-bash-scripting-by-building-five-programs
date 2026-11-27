@@ -6,7 +6,7 @@ RESPONSES=("Yes" "No" "Maybe" "Outlook good" "Don't count on it" "Ask again late
 
 N=$((RANDOM%6))
 
-GET_FORTUNE(){
+GET_GUESS(){
   if [[ ! $1 ]]
   then
     echo Ask a yes or no question:
@@ -16,11 +16,11 @@ GET_FORTUNE(){
   read QUESTION
 }
 
-GET_FORTUNE
+GET_GUESS
 
 until [[ $QUESTION =~ \?$ ]]
 do
-  GET_FORTUNE again
+  GET_GUESS again
 done
 
 echo -e "\n${RESPONSES[$N]}"
